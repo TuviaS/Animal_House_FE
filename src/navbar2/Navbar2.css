@@ -1,0 +1,36 @@
+.navbar2 {
+    overflow: hidden;
+    background-color: #f1b753;
+    float: left;
+    box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.3);
+    /* Increased blur radius for deeper shadow */
+}
+
+.navbar2 a {
+    float: right;
+    color: #180606;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    align-self: flex;
+    border-right: 2px solid #c4c4c4;
+    display: inline-block;
+    cursor: url(/public/images/Paw.cur), auto;
+    height: 40px;
+    padding: 0 15px;
+    transition: background-color 0.3s;
+}
+.navbar2 a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar2 a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.navbar2-right {
+    float: right;
+}

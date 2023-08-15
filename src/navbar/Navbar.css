@@ -1,0 +1,75 @@
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr 1fr 1fr;
+    /* Update the column widths as desired */
+    align-items: center;
+    background-color: #8b7bf1;
+    border-bottom: 2px solid rgb(36, 12, 48);
+    height: 90px;
+
+}
+
+.navbar img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-icon {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    cursor: url(/public/images/Paw.cur), auto;
+}
+
+.user-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-icon-wrapper {
+    width: 30px;
+    height: 30px;
+}
+
+.user-icon {
+    height: 15%;
+    width: 15%;
+    cursor: url(/public/images/Paw.cur), auto;
+    object-fit: contain;
+}
+
+.user-icon-text {
+    font-size: 20px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.search-input {
+
+    cursor: url(/public/images/Paw.cur), auto;
+    flex-grow: 1;
+    font-size: 20px;
+}
+
+.logout-icon {
+    font-size: 30px;
+    color: #333;
+    cursor: url(/public/images/Paw.cur), auto;
+    size: 30px;
+
+}
+
+.navbar-section {
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+
+}

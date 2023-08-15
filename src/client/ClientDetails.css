@@ -1,0 +1,76 @@
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgb(137, 131, 154);
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sign-in-button {
+    font-size: 25px;
+    cursor: url(/public/images/Paw.cur), auto;
+    color: green;
+}
+
+.sign-up-button {
+    cursor: url(/public/images/Paw.cur), auto;
+    font-size: 25px;
+}
+
+.cancel-button {
+    font-size: 25px;
+    cursor: url(/public/images/Paw.cur), auto;
+    color: red;
+}
+
+.error_mes {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.not-registered-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: rgb(254, 105, 105);
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 1px rgb(1, 1, 1);
+}
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 12px 20px rgba(0, 0, 0, 0.3);
+}
