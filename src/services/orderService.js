@@ -18,7 +18,7 @@ export const getTemporalOrder = async(email) => {
 };
 
 export const createTemporalOrder = async(email, itemNumber) => {
-    console.log(" about to create temp order, msg from orderSerice. email is :" + email + ", itemNumber is: " + itemNumber);
+   
     try {
 
         const response = await axios.post(CREATE_TEMP_ORDER(email), itemNumber, {
@@ -34,7 +34,7 @@ export const createTemporalOrder = async(email, itemNumber) => {
 };
 
 export const addToTemporalOrder = async(email, itemNumber) => {
-    console.log("itemnumber is: " + itemNumber)
+   
     try {
         const response = await axios.put(ADD_TO_ORDER(email), itemNumber, {
             headers: {
@@ -49,7 +49,7 @@ export const addToTemporalOrder = async(email, itemNumber) => {
 };
 
 export const removeFromTemporalOrder = async(email, itemNumber) => {
-    console.log("itemnumber is: " + itemNumber)
+    
     try {
         const response = await axios.put(REMOVE_FROM_ORDER(email), itemNumber, {
             headers: {
@@ -58,7 +58,7 @@ export const removeFromTemporalOrder = async(email, itemNumber) => {
         });
         return response.data;
     } catch (error) {
-        console.log("error rmoving item from temporal order with email:  " + email + "item number: " + itemNumber)
+        
         console.error('Error removing to temporal order:', error);
         return [];
     }

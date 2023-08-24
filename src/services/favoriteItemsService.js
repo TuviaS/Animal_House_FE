@@ -6,10 +6,10 @@ const DELETE_FROM_FAVORITE_LIST = (email) => `item/deleteItemFromFavoriteItemLis
 export const getFavoriteItems = async(email) => {
     try {
         const response = await axios.get(GET_FAVORITE_ITEMS(email));
-        console.log("favorites list fetched: " + response.data[0].itemPrice);
+        
         return response.data;
     } catch (error) {
-        console.error('Error fetching favorite list: ', error);
+        
         return null;
     }
 };

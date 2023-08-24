@@ -17,7 +17,7 @@ export const getAllItems = async() => {
 
 export const reduceItemFromStock = async(itemId) => {
     try {
-        const response = await axios.put(REDUCE_ITEM(itemId));
+        await axios.put(REDUCE_ITEM(itemId));
         // Update the state or handle the response as needed
     } catch (error) {
         console.error('Error reducing items:', error);

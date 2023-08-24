@@ -89,7 +89,7 @@ const App = () => {
 
                         const updatedFavoriteItems = await getFavoriteItems(client.email);
                         setFavoriteItems(updatedFavoriteItems);
-                        console.log("fav item added: " + itemId);
+                        
                     } else {
                         console.log("Item is already in favorites.");
                     }
@@ -108,7 +108,7 @@ const App = () => {
 
                 const updatedFavoriteItems = await getFavoriteItems(client.email);
                 setFavoriteItems(updatedFavoriteItems);
-                console.log("fav item removed: " + itemId);
+                
             }
         } catch (error) {
             console.error("Error removing item from favorites:", error);
@@ -141,6 +141,7 @@ const App = () => {
         const registeredClient = await getClientByEmail(email);
         setClient(registeredClient);
         setShowRegister(!showRegister);
+        setFavoriteItems(null);
         setShowGrid(true);
         setShowCommercial(true);
         setOrderList([]);
@@ -241,37 +242,39 @@ const App = () => {
         handleAddItemToStock(itemId);
     };
 
-    const handleLoginSubmit = async(email, password) => {
+    const handleLoginSubmit = async (email, password) => {
         setShowCommercial(!showCommercial);
         try {
             const clientData = await getClientByEmail(email);
-
-            if (clientData) {
+    
+            if (clientData.email !== "") {  // Check if the email property is not empty
                 setShowGrid(true);
                 setLoggedIn(true);
                 setShowCommercial(true);
                 setClient(clientData);
-
+    
                 const fetchedOrderList = await getTemporalOrder(email);
                 if (fetchedOrderList) {
                     setOrderList(fetchedOrderList);
                     setCartIsEmpty(false);
-                    <Navbar > </Navbar>
-                }
+                    // Render the Navbar component here
+                } else {setOrderList(null)}
                 const fetchedFavoriteItemsList = await getFavoriteItems(email);
                 if (fetchedFavoriteItemsList) {
                     setFavoriteItems(fetchedFavoriteItemsList);
-
-                }
-
+                } else {setFavoriteItems(null)};
+    
                 setShowLogin(false);
             } else {
-                console.error("Invalid credentials. Please try again.");
+                console.log("Invalid credentials. Please try again.");
+                // You can set an error message state here if desired
             }
         } catch (error) {
             console.error("Error fetching client data:", error);
+            // You can set an error message state here if desired
         }
     };
+    
 
     useEffect(() => {
         setLoggedIn(!!client);
